@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>count</title>
+  <link rel="stylesheet" href="{% static 'css/count.css' %}">
+</head>
+<body>
+  <div class="t1">
+    <h1>글자수 알려주기 페이지</h1>
+  </div>
+
+  <div class="t2">
+    <h2>여기에 글자를 쓰세요!</h2>
+  </div>
+
+  <div class="p1">
+    <img src="con.jpg" top="100px" height="100px">
+  </div>
+
+  <form action="{% url 'result' %}" method="POST">{% csrf_token %}
+    <textarea rows="50" cols="270" name="text"></textarea>
+    <br>
+    <input type="submit" value="단어 수 세기">
+  </form>
+</body>
+</html>
